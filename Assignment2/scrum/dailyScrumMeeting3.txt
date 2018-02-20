@@ -1,0 +1,142 @@
+# Fill in, commit and push each day.
+# Group Member: Stephen Babb
+
+Oct 23, 2017
+	Yesterday : Did nothing
+	Today     : Made branches and updated members.txt
+	Obstacles : Learning how to make branches
+
+Oct 24, 2017
+	Yesterday : Made branches and updated members.txt
+	Today     : Held a scrum meeting to assign user story tasks
+	Obstacles : Learning how to push branches to the cloud  from command line
+
+Oct 25, 2017
+	Yesterday : Made branches
+	Today     : Took a break to work on other assignments
+	Obstacles : Since no work was done, there were no obstacles
+
+Oct 26, 2017
+	Yesterday : Took a break
+	Today     : We had a scrum meeting to discuss the structure of the GUI. I fixed
+				the circle drawing bug so it draws in the correct location. I also
+				added the feature that the circle gets updated on the screen when the
+				mouse moves.
+	Obstacles : It took some time to find all the places in the code where circles
+				were hooked to the GUI.
+
+Oct 27, 2017
+	Yesterday : I fixed all circle related user stories.
+	Today     : I took a break to do other course related stuff.
+	Obstacles : No obstacles since I didn't do anything.
+
+Oct 28, 2017
+	Yesterday : I did nothing.
+	Today     : I did nothing in order to do work in other classes. 
+	Obstacles : No obstacles since I didn't do anything.
+
+Oct 29, 2017
+	Yesterday : I did nothing.
+	Today     : I did nothing in order to do work in other classes.
+	Obstacles : No obstacles since I didn't do anything.
+
+Oct 30, 2017
+	Yesterday : I did nothing.
+	Today     : I did nothing in order to do work in other classes.
+	Obstacles : No obstacles since I didn't do anything.
+
+Oct 31, 2017
+	Yesterday : I did nothing.
+	Today     : I added some ideas on possible architecture that can be
+				integrated into the design. 
+	Obstacles : Learning how the different design patterns worked since
+				it was my first time seeing them.
+
+Nov 1, 2017
+	Yesterday : I worked on architecture.
+	Today     : I did nothing.
+	Obstacles : No obstacles since I didn't do anything.
+	
+Nov 2, 2017
+	Yesterday : I did nothing.
+	Today     : We had a scrum meeting to discuss how a change in architecture
+				would affect the whole model. I also helped with the implementation
+				of the square user story.
+	Obstacles : It took some time trying to implement drawing squares in the simplest
+				way possible.
+	
+Nov 3, 2017
+	Yesterday : We held a scrum meeting about architecture and I helped with square.
+	Today     : I did nothing.
+	Obstacles : No obstacles since I didn't do anything.
+
+Nov 4, 2017
+	Yesterday : I did nothing.
+	Today     : I added some more ideas about architecture.
+	Obstacles : I had some trouble visualizing how the code would work with new
+				architecture because our team is not implementing this yet.
+
+Nov 5, 2017
+	Yesterday : I added some more architecture ideas.
+	Today     : I helped to make the GUI look better. I also implemented the
+				scrub eraser user story.
+	Obstacles : I had to add more if statements to all mouse events which took
+				some time.
+
+Nov 6, 2017
+	Yesterday : I improved the look of the GUI and added a scrub eraser.
+	Today     : I did nothing in order to do work in other classes.
+	Obstacles : No obstacles since I didn't do anything.
+	
+Nov 7, 2017
+	Yesterday : I did nothing.
+	Today     : I added some more ideas about architecture.
+	Obstacles : No obstacles since I didn't do anything.
+	
+Nov 8, 2017
+	Yesterday : I added some more ideas about architecture.
+	Today     : I did nothing in order to do work in other classes.
+	Obstacles : Trying to understand how all the design patterns interact
+				with each other.
+	
+Nov 9, 2017
+	Yesterday : I did nothing.
+	Today     : We had a scrum meeting to discuss implementing the new
+				architecture. I also created the factory for handling
+				the correct strategy selection and created all the strategy
+				classes.
+	Obstacles : We had to figure out how to work on completing user
+				stories in a way that would reduce git merge conflicts. We
+				also had to plan out the entire design beforehand in order
+				to ensure we had all the necessary classes
+	
+Nov 10, 2017
+	Yesterday : I created the factory and strategy classes.
+	Today     : I did nothing.
+	Obstacles : No obstacles since I didn't do anything.
+	
+Nov 11, 2017
+	Yesterday : I did nothing.
+	Today     : I did nothing in order to do work in other classes.
+	Obstacles : No obstacles since I didn't do anything.
+	
+Nov 12, 2017
+	Yesterday : I did nothing.
+	Today     : I added some ideas about architecture, especially undo and redo.
+	Obstacles : I had to visualize how undo and redo would work by testing it
+				out in Paint first. Then, I had to try to replicate that concept
+				using the designs we learned.
+	
+Nov 13, 2017
+	Yesterday : I added architecture ideas about undo and redo.
+	Today     : I implemented undo and redo. Also, I contributed to fixing the
+				strategies and commands to work as intended.
+	Obstacles : I had to create and modify a lot of classes.
+	
+Nov 14, 2017
+	Yesterday : I implemented undo and redo.
+	Today     : I worked on polyline, triangle and oval related classes. Also, I
+				implemented movable shapes.
+	Obstacles : I encountered a lot of merge conflicts due to the team pushing code
+				on the same files I was working on. This took a while to resolve.
+

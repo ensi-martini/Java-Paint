@@ -1,0 +1,117 @@
+# Fill in, commit and push each day.
+# Group Member: Ensi Martini
+
+Oct 23, 2017
+	Yesterday : 
+	Today     : Dindu nuffin
+	Obstacles :
+
+Oct 24, 2017
+	Yesterday :
+	Today     : Have first scrum meeting.
+	Obstacles :
+
+Oct 25, 2017
+	Yesterday : First meeting.
+	Today     : Define roles and go through the code to get an idea of how to approach the tasks at hand and squash bugs.
+	Obstacles :
+
+Oct 26, 2017
+	Yesterday : Met with group and discussed.
+	Today     : Studied 207 midterm.
+	Obstacles :
+
+Oct 27, 2017
+	Yesterday : Studying.
+	Today     : Studied 207 midterm.
+	Obstacles :
+
+Oct 28, 2017
+	Yesterday : Studying.
+	Today     : Did nothing.
+	Obstacles :
+
+Oct 29, 2017
+	Yesterday : Nothing.
+	Today     : Did nothing.
+	Obstacles :
+
+Oct 30, 2017
+	Yesterday : Nothing.
+	Today     : Did nothing.
+	Obstacles :
+
+Oct 31, 2017
+	Yesterday : Nothing.
+	Today     : Did nothing.
+	Obstacles :
+
+Nov 1, 2017
+	Yesterday : Nothing.
+	Today     : Studied architechture and started mapping ideas off of UML.
+	Obstacles :
+	
+Nov 2, 2017
+	Yesterday : Architechture.
+	Today     : Made buttons have images instead of words.
+	Obstacles : Buttons were resizing to the image size, instead of the other way around, so we have large unsightly buttons that were very counter-intuitive. Also had an issue with passing the actionevents on properly because they no longer had text within them.
+	
+Nov 3, 2017
+	Yesterday : Button images.
+	Today     : Fixed button size, implemented color picker.
+	Obstacles : Many unnecessary color options in panes, also had to figure out how to pass color info within the current architechture.
+
+Nov 4, 2017
+	Yesterday : Started color picker.
+	Today     : Properly layed every slider and button in a nice way, also handled scaling so that they dont get bigger.
+	Obstacles : GridBagLayout nesting creates spaces where we do not want them.
+
+Nov 5, 2017
+	Yesterday : Organized layout.
+	Today     : Fill and stroke modifers completed.
+	Obstacles : None
+	
+Nov 6, 2017
+	Yesterday : Finished A2P1.
+	Today     : Nothing.
+	Obstacles : 
+
+Nov 7, 2017
+	Yesterday : Nothing.
+	Today     : Read through A2P2.
+	Obstacles : 
+
+Nov 8, 2017
+	Yesterday : Started A2P2.
+	Today     : Brainstormed with group.
+	Obstacles : 
+
+Nov 9, 2017
+	Yesterday : Created basic plan.
+	Today     : Starting fixing bugs in order presented as a group (that's why there is no activity showing up on my branches)
+	Obstacles : 
+	
+Nov 10, 2017
+	Yesterday : Helped group get factory and commands started.
+	Today     : Took a look at how I could do bug2.2
+	Obstacles : We already implemented fill/color a different way, so this bug really doesn't exist.
+
+Nov 11, 2017
+	Yesterday : Worked on bug2.2
+	Today     : Helped group with DrawingCommandStack.
+	Obstacles : 
+
+Nov 12, 2017
+	Yesterday : Worked on DrawingCommandStack.
+	Today     : Implemented triangle.
+	Obstacles : Point issue.
+	
+Nov 13, 2017
+	Yesterday : Worked on triangle.
+	Today     : Worked on oval.
+	Obstacles : Point issue.
+	
+Nov 14, 2017
+	Yesterday : Worked on oval.
+	Today     : Final gui finishes, did JavaDoc.
+	Obstacles : 

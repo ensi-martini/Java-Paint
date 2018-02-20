@@ -1,0 +1,117 @@
+# Fill in, commit and push each day.
+# Group Member: Jitesh Khiani
+
+Oct 23, 2017
+	Yesterday : Recieved Assignment
+	Today     : Added info to Members.txt
+	Obstacles : N/A
+
+Oct 24, 2017
+	Yesterday : Added info to Members.txt
+	Today     : First Scrum Meeting.
+	Obstacles : Using Git
+
+Oct 25, 2017
+	Yesterday : Had first scrum meeting.
+	Today     : Completed UserStory3, draw rectangle
+	Obstacles : Getting the rectangle to be drawn in the proper size/position
+
+Oct 26, 2017
+	Yesterday : Completed UserStory3
+	Today     : Completed UserStory4, live feedback on rectangle drawing
+	Obstacles : Making it efficient (not storing hundreds of rects in an array)
+
+Oct 27, 2017
+	Yesterday : Completed UserStory4
+	Today     : Completed Bug5, fixed squiggle
+	Obstacles : N/A
+
+Oct 28, 2017
+	Yesterday : Completed Bug5, fixed squiggle
+	Today     : N/A
+	Obstacles : N/A
+
+Oct 29, 2017
+	Yesterday : N/A
+	Today     : N/A
+	Obstacles : N/A
+
+Oct 30, 2017
+	Yesterday : N/A
+	Today     : N/A
+	Obstacles : N/A
+
+Oct 31, 2017
+	Yesterday : N/A
+	Today     : Completed Bug7, fixed rectangle ending when mouse out of bounds.
+	Obstacles : N/A
+
+Nov 1, 2017
+	Yesterday : Completed Bug7
+	Today     : N/A
+	Obstacles : N/A
+	
+Nov 2, 2017
+	Yesterday : N/A
+	Today     : Helped Ensi with formatting, restructuring, overall minor improvements
+	Obstacles : Understanding what is considered good OO vs. bad OO
+	
+Nov 3, 2017
+	Yesterday : N/A
+	Today     : Aided with gui design ideas, architecture discussions.
+	Obstacles : So many options, what to do?
+
+Nov 4, 2017
+	Yesterday : Brainstormed.
+	Today     : Undid Bug7, apparently not required, Completed UserStory6, Did fill style selector
+	Obstacles : N/A
+
+Nov 5, 2017
+	Yesterday : Completed UserStory6
+	Today     : Looked over code, helped group mates with overall improvements
+	Obstacles : Making the GUI look optimal
+	
+Nov 6, 2017
+	Yesterday : N/A
+	Today     : N/A
+	Obstacles : N/A
+
+Nov 7, 2017
+	Yesterday : N/A
+	Today     : N/A
+	Obstacles : N/A
+
+Nov 8, 2017
+	Yesterday : N/A
+	Today     : Brain stormed architecture
+	Obstacles : Understanding which to use is most effective
+
+Nov 9, 2017
+	Yesterday : Brain stormed
+	Today     : Had scrum meeting, assigned tasks
+	Obstacles : N/A
+	
+Nov 10, 2017
+	Yesterday : N/A
+	Today     : N/A
+	Obstacles : N/A
+
+Nov 11, 2017
+	Yesterday : N/A
+	Today     : Started bug 2.4, implementing strategies
+	Obstacles : How do i pass information on so that i can create the instance?
+
+Nov 12, 2017
+	Yesterday : Started Bug2.4
+	Today     : Continued Bug2.4
+	Obstacles : Connecting everything together, what goes where?
+	
+Nov 13, 2017
+	Yesterday : Continued Bug2.4
+	Today     : Completed Bug2.4
+	Obstacles : N/A
+	
+Nov 14, 2017
+	Yesterday : Completed Bug2.4
+	Today     : Added keyboard commands, modified cursor, minor tweaks
+	Obstacles : Saving keyboard input (only allows 1 keyListener)

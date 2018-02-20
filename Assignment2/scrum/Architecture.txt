@@ -1,0 +1,217 @@
+# Please discuss your architectural decisions below.
+
+High Level Architecture:
+
+	MVC
+	To keep the code simple, a partial MVC was implemented.
+	
+	Model
+	The Model captures enough information to re-draw the sketch of
+	the user.
+	
+	View+Controller
+	There is a View class as well as a few, what we call, view components.
+	The View class capturing the JFrame as well
+	as containing all of its components.
+	View components are meant to be contained in the main View.
+	Examples of view components are PaintPanel and ShapeChooserPanel.
+	
+	The View class, and view components all implements their own controller.
+	For example, the PaintPanel listens to its own MouseEvents.
+	This is instead of separating out the Controller from the View. This choice
+	was made to simplify the code, yet still keep it modular and clear.
+	
+	Each view component can see the containing View as well as the Model
+	as appropriate. This means that each view component can speak to the
+	other view components. An example of this is when the ShapeChooserPanel
+	buttons are clicked, resulting in a mode change in the PaintPanel.
+	
+	
+	== BELOW IS ARCHITECTURE DISCUSSION ==
+	
+	Juan:
+	
+	So the problem with the current state of the architecture is that our 
+	PaintModel is being encumbered with the ArrayList of each shape and that
+	our PaintPanel essentially redraws every shape in each of those lists. This
+	becomes a problem when we have a multitude of shape objects in these ArrayLists.
+	
+	My solution is move the responsibilites of redrawing all the shapes into something else.
+	
+	An idea is what we essentially keep track of the finished shapes in a list. (This would
+	help with undo). Our last shape object would be the most recent shape object created.
+	
+	Why don't we switch the responsibilites of PaintModel and PaintPanel, i.e., let the Panel
+	store the shapes and let the Model handle how the shapes are created?
+	
+	Stephen:
+	
+	UNDO / REDO
+	-there is a DrawingCommandStack class, with main methods addCommand(), executeAll(), undoCommand(), redoCommand()
+	-this class also maintains an undoCom stack of DrawingCommands like CircleDrawingCommand, SquareDrawingCommand, etc
+	-the class also maintains a redoCom stack of DrawingCommands
+	-initially, both stacks are empty
+	-each DrawingCommand class has the main methods add(Shape), execute(g2d), undo(), redo()
+	-the class also has an instance of the right shape
+	-this class also maintains an undo stack and redo stack of Shape objects
+	-initially, both stacks are empty
+	
+	DrawingCommand main method implementations:
+	
+	add(Shape)
+	-adds a Shape object to the undo stack
+	-this also clears the redo stack
+	
+	execute(g2d)
+	-draws an instance of the "current shape" object to the canvas
+	-"current shape" is the Shape at the top of the undo stack
+	-will only get called when there is at least one Shape in the undo stack
+	
+	undo()
+	-if the undo stack is not empty:
+		-pop the Shape off the top of the undo stack
+		-push the Shape to the top of the redo stack
+		
+	-otherwise:
+		-do nothing
+	
+	redo()
+	-if the redo stack is not empty:
+		-pop the Shape off the top of the redo stack
+		-push the Shape to the top of the undo stack
+		
+	-otherwise:
+		-do nothing
+	
+	
+	
+	DrawingCommandStack main method implementations:
+	
+	addCommand()
+	-this adds a DrawingCommand to our current undo stack
+	-this also clears the redo stack
+	
+	executeAll()
+	-this runs the execute(g2d) method for each DrawingCommand in the undo stack
+	
+	undoCommand()
+	-if the undoCom stack is not empty:
+		-we will consider the DrawingCommand at the top of our undoCom stack
+		-if the redo stack in the DrawingCommand class is empty:
+			-push the SAME instance of the DrawingCommand to the top of the redoCom stack
+			
+		-otherwise:
+			-do not push
+		 
+		-run undo() method on DrawingCommand at the top of the undoCom stack
+		-if the undo stack in the DrawingCommand class is now empty:
+			-pop this DrawingCommand off the undoCom stack
+			
+		-otherwise:
+			-don't pop
+			
+	-otherwise:
+		-do nothing
+	
+	redoCommand()
+	-if the redoCom stack is not empty:
+		-we will consider the DrawingCommand at the top of our redoCom stack
+		-if the undo stack in the DrawingCommand class is empty:
+			-push the SAME instance of the DrawingCommand to the top of the undoCom stack
+			
+		-otherwise:
+			-do not push
+		
+		-runs redo() method on DrawingCommand at the top of the redoCom stack
+		-if the redo stack in the DrawingCommand class is now empty:
+			-pop this DrawingCommand off the redoCom stack
+			
+		-otherwise:
+			-don't pop
+	
+	
+	
+	STRATEGIES
+	-strategies are used for clicking on a shape and drawing a shape
+	-when the shape is clicked, you can resize/delete/do other stuff
+	-possible implementation is a ShapeStrategy interface with unimplemented methods like draw() and isSelected(x, y)
+	-the draw() method just defines how the graphics class draws the shape
+	-the isSelected(x, y) method takes a point and returns whether this point is inside the current shape
+	-each shape class inherits from the ShapeStrategy and implements the methods appropriately
+	-the ShapeChooserPanel class can set the strategy on the View class depending on which button was pressed
+	-the PaintPanel class can get the strategy from the View class
+	-this has to be hooked up to mouse events like mouse clicked (see commands section)
+	-this will also affect ordering of undo/redo
+	
+	-when you click on a button, it sets the strategy
+	-strategy is some mouse motion listener
+	-mouse strategy builds the command
+	-these strategies build the command
+	-command holds onto instance of circle class
+	-so the strategy also changes the same instance of the circle class
+	-command takes the argument of g2d (graphics)
+	-command knows how to draw the circle on the screen
+	
+	-draw visitor knows how to draw all commands individually
+	-save visitor is given an open file and writes the draw commands into a file
+	
+	COMMANDS
+	-we can use commands for drawing the shapes
+	-this is useful for undoing and redoing
+	-throw all shapes into a single list and pop off for an undo
+	-when a shape gets undone, it gets put into another list
+	-redo is to transfer shapes from the undo list and put it back onto the list of shapes to be drawn
+	-this preserves order for how the shapes are added
+	-possible implementation is to have a shape array implemented as a stack
+	-when a redo happens, pop off the top of the undo stack and push onto the top of the shape draw stack
+	-invoker has a list of commands, and it can tell all commands to execute
+	-possible implementation is a ShapeCommandInvoker class that has our shape array stack as an instance variable
+	-an instance of this class is created in the PaintPanel class
+	-when the mouse is clicked, the shape strategy is added to our invoker with add() method
+	-when the mouse is dragged, we call repaint 
+	-so when repaint gets called, the drawAll() method is called on our invoker
+	-drawAll() executes the draw() method for each shape strategy in our shape stack
+	-with a selection tool, a mouse click can use the invoker to find if a shape was selected with isSelected(x, y)
+	-with a stroke eraser, a mouse drag can use isSelected(x, y) to hide any matching shapes
+	-with a scrub eraser, a line strategy can be used to draw that is the same color as the background of the program
+	
+	FACTORY
+	-factories only require names
+	-so when a name is supplied, a certain class will be made
+	-this can be helpful when using buttons and knowing which button was clicked
+	-for example, we could throw all the names of the different shapes in a list
+	-when the button is pressed, the right shape class will be created and the right mode will be set
+	-can be used as an alternative to strategies
+	
+	BUILDER
+	-builder has commands for each type of class you make
+	-an example is pizzas
+	-so a pizza builder has defaults for possible toppings set to false
+	-the types of pizzas, like deluxe or hawaiian extend from the pizza builder
+	-when a deluxe pizza is selected, all the defaults for a deluxe are added
+	-then other toppings for the pizza can be added with the defaults
+	-this has the benefit for keeping param counts low, but not really needed here
+	
+	
+---------------------------------------------------------------------
+TODO!!! Add in more architecture and discussion. For example, 
+do you do something interesting to fix the association between the 
+ShapeChooser and the PaintPanel? How about the PaintModel, something
+is clearly wrong with it. Can you come up with a better architecture?
+---------------------------------------------------------------------
+
+DESIGN PATTERNS USED
+	TODO!!! If you introduce a Design Pattern to solve a problem, 
+	discuss it below. Only add design patterns if they simplify and improve
+	the code. I see at least two that would greatly improve code. 
+		
+	Strategy:
+	Command: 
+	Singleton:
+	Composite:
+	Factory:
+	Builder:
+	Observer/Observable:
+	... (any others you find useful) ...
+
+OTHER ARCHITECTURE DISCUSSIONS
